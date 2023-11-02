@@ -21,5 +21,5 @@ while getopts ":j:t:" arg; do
   esac
 done
 
-cd ~/dev && nohup jupyter lab --no-browser --port ${JUPYTER_PORT} &
+cd ~/dev && nohup jupyter lab --no-browser --port ${JUPYTER_PORT} --ip 0.0.0.0 &
 cd ~/models && nohup tensorboard --port ${TENSORBOARD_PORT} --logdir ~/models/runs &
