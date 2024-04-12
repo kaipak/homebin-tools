@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This script sets up the environment for your ROS and Python development.
+
+# Define the path to your ROS installation and your Python virtual environment
+ROS_SETUP="/opt/ros/humble/setup.bash"
+PYTHON_VENV="$HOME/ros_venvs/ros_project/bin/activate"
+
+# Source the ROS environment
+if [ -f "$ROS_SETUP" ]; then
+    echo "Sourcing ROS environment from $ROS_SETUP"
+    source "$ROS_SETUP"
+else
+    echo "ROS setup script not found at $ROS_SETUP"
+fi
+
+# Activate the Python virtual environment
+if [ -f "$PYTHON_VENV" ]; then
+    echo "Activating Python virtual environment from $PYTHON_VENV"
+    source "$PYTHON_VENV"
+else
+    echo "Python virtual environment activation script not found at $PYTHON_VENV"
+fi
+
