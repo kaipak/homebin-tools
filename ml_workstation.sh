@@ -1,8 +1,8 @@
 #!/bin/bash
 # Run services for ML development.
-JUPYTER_PORT=8888
+JUPYTER_PORT=8889
 JUPYTER_OUTPUT=~/dev
-TENSORBOARD_PORT=6006
+TENSORBOARD_PORT=6007
 TENSORBOARD_OUTPUT=~/models/runs
 
 usage() {
