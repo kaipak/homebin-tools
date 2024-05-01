@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# This script sets up the environment for your ROS and Python development.
+
+# Define the path to your ROS installation and your Python virtual environment
+ROS_SETUP="/opt/ros/humble/setup.zsh"  # Assuming a zsh setup script is available
+PYTHON_VENV="$HOME/venvs/llm-robotics/bin/activate"
+
+# Source the ROS environment
+if [[ -f "$ROS_SETUP" ]]; then
+    echo "Sourcing ROS environment from $ROS_SETUP"
+    source "$ROS_SETUP"
+else
+    echo "ROS setup script not found at $ROS_SETUP"
+fi
+
+# Activate the Python virtual environment
+if [[ -f "$PYTHON_VENV" ]]; then
+    echo "Activating Python virtual environment from $PYTHON_VENV"
+    source "$PYTHON_VENV"
+else
+    echo "Python virtual environment activation script not found at $PYTHON_VENV"
+fi
+
+export ROS_DOMAIN_ID=1
